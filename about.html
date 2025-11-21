@@ -1,155 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | PTS</title>
-  <style>
-    :root {
-      --accent: #0c6dd8;
-      --muted: #eef3fb;
-      --dark: #0c1a30;
-    }
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      margin: 0;
-      color: #1b1b1b;
-      background: #f8fbff;
-      line-height: 1.6;
-    }
-    header {
-      background: var(--dark);
-      color: #fff;
-      padding: 20px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    nav a {
-      color: #d9e6ff;
-      margin-left: 16px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    main {
-      max-width: 1100px;
-      margin: 32px auto 80px;
-      padding: 0 20px;
-    }
-    h1 {
-      margin-bottom: 8px;
-      color: var(--dark);
-    }
-    .lead {
-      font-size: 1.05rem;
-      color: #30415f;
-      max-width: 900px;
-    }
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 28px 0;
-    }
-    .badge {
-      background: var(--muted);
-      color: var(--dark);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(12, 109, 216, 0.15);
-      border: 1px solid rgba(12, 109, 216, 0.2);
-    }
-    .timeline {
-      margin-top: 24px;
-      padding-left: 12px;
-      border-left: 4px solid var(--accent);
-    }
-    .timeline-item {
-      margin: 16px 0;
-      padding-left: 18px;
-      position: relative;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -12px;
-      top: 6px;
-      width: 12px;
-      height: 12px;
-      background: #fff;
-      border: 3px solid var(--accent);
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .estonia {
-      background: #fff;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(12, 109, 216, 0.08);
-      border: 1px solid rgba(12, 109, 216, 0.12);
-      margin-top: 18px;
-    }
-    footer {
-      background: #0e1628;
-      color: #e9edf5;
-      padding: 22px 28px;
-      font-size: 0.95rem;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    footer strong { color: #fff; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTS Defense | Hakkımızda</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header>
-    <div><strong>PTS</strong></div>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>PTS Defense</div>
+          <small class="tagline">Estonya merkezli • NATO NSPA vendor</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a class="active" href="about.html">Hakkımızda</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h1>Strategic Procurement Capability</h1>
-    <p class="lead">We are an integrated supplier for NSPA procurement programs with NATO NCAGE code (022CJ) and U.S. federal market identifiers in place.</p>
-
-    <div class="badges">
-      <div class="badge">NSPA Registered Supplier</div>
-      <div class="badge">NCAGE: 022CJ</div>
-      <div class="badge">UEI: Z1VDMSSCTGKS</div>
-      <div class="badge">SAM.gov Active</div>
+  <section class="hero hero-compact">
+    <div class="content">
+      <div class="breadcrumb">Ana Sayfa / Hakkımızda</div>
+      <h1>PTS Defense: güvenilir uluslararası tedarikçi</h1>
+      <p class="subheading">Elektronik harp, radar ve OEM üretim kabiliyetlerini NATO ve müttefik gereksinimleriyle uyumlu olarak geliştiriyoruz.</p>
     </div>
+  </section>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>NSPA</strong> — Positioned with logistics compliance and quality assurance for NATO support operations.
-      </div>
-      <div class="timeline-item">
-        <strong>NCAGE 022CJ</strong> — Verified NATO codification enables fast responses to alliance tasking with flexible sourcing.
-      </div>
-      <div class="timeline-item">
-        <strong>UEI Z1VDMSSCTGKS</strong> — Identity validation completed for U.S. federal and defense markets.
-      </div>
-      <div class="timeline-item">
-        <strong>SAM.gov</strong> — Active registration ensures transparent contracting and international compliance.
+  <section class="section">
+    <div class="content">
+      <div class="grid-two">
+        <div class="card">
+          <h3>Kurum kimliği</h3>
+          <p>Estonya merkezli PTS Defense, Avrupa Birliği ve NATO tedarik zincirine entegre çözümler sunar.</p>
+          <ul class="list">
+            <li>NCAGE kodu: <span class="highlight">022CJ</span></li>
+            <li>UEI ID: <span class="highlight">Z1VDMSSCTGKS</span></li>
+            <li>NATO NSPA vendor kaydı: <strong>aktif</strong></li>
+            <li>SAM.gov tedarikçi kaydı: <strong>aktif</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Operasyonel yaklaşım</h3>
+          <p>Gereksinim analizi, çözüm mimarisi, üretim ve lojistik destek süreçlerinde çevik ve şeffaf ilerliyoruz.</p>
+          <ul class="list">
+            <li>ITAR ve ihracat kontrol süreçlerinde danışmanlık</li>
+            <li>Çoklu domain entegrasyonu (kara, hava, deniz, siber)</li>
+            <li>Yaşam döngüsü destek ve modernizasyon planları</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="estonia">
-      <h2>Estonia HQ, Global Delivery</h2>
-      <p>Our Tallinn headquarters connects directly into Baltic and NATO logistics corridors while accredited customs brokers provide end-to-end traceability across EU and overseas deliveries.</p>
+  <section class="section">
+    <div class="content">
+      <h2>Yetkinliklerimiz</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Elektronik Harp</h3>
+          <p>Spektrum farkındalığı, bastırma ve aldatma görevleri için programlanabilir jammer mimarileri.</p>
+        </div>
+        <div class="card">
+          <h3>Radar Teknolojileri</h3>
+          <p>Kompakt gözetleme radarları, modüler anten sistemleri ve sinyal işleme optimizasyonu.</p>
+        </div>
+        <div class="card">
+          <h3>OEM ve Üretim</h3>
+          <p>Groza ailesi dahil lisanslı üretim, kalite güvence ve kalifikasyon desteği.</p>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <div><strong>Address:</strong> Põhja pst 27, 10415 Tallinn, Estonia</div>
-    <div><strong>Business Registration:</strong> Estonian Commercial Register (Reg. No: 14928765)</div>
-    <div><strong>Compliance:</strong> Full adherence to privacy, import/export and sanctions regulations; all requests are subject to AML/KYC checks.</div>
+  <footer class="footer">
+    <div class="content">
+      <div>
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>PTS Defense</div>
+        </div>
+        <p class="tagline">Estonya merkezli uluslararası savunma tedarikçisi.</p>
+      </div>
+      <div>
+        <strong>Kurumsal</strong>
+        <ul class="list">
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Ürünler</strong>
+        <ul class="list">
+          <li><a href="products/rf-45.html">PTS RF-45 Jammer</a></li>
+          <li><a href="products/falcon.html">PTS Falcon Jammer</a></li>
+          <li><a href="products/r400.html">PTS R-400 Sentinel Radar</a></li>
+          <li><a href="products/groza.html">Groza-1 / Groza-2 OEM Production</a></li>
+        </ul>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
