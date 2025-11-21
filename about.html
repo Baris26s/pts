@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | PTS</title>
+  <style>
+    :root {
+      --accent: #0c6dd8;
+      --muted: #eef3fb;
+      --dark: #0c1a30;
+    }
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      margin: 0;
+      color: #1b1b1b;
+      background: #f8fbff;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--dark);
+      color: #fff;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      color: #d9e6ff;
+      margin-left: 16px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    main {
+      max-width: 1100px;
+      margin: 32px auto 80px;
+      padding: 0 20px;
+    }
+    h1 {
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: #30415f;
+      max-width: 900px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .badge {
+      background: var(--muted);
+      color: var(--dark);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(12, 109, 216, 0.15);
+      border: 1px solid rgba(12, 109, 216, 0.2);
+    }
+    .timeline {
+      margin-top: 24px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    .timeline-item {
+      margin: 16px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .estonia {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(12, 109, 216, 0.08);
+      border: 1px solid rgba(12, 109, 216, 0.12);
+      margin-top: 18px;
+    }
+    footer {
+      background: #0e1628;
+      color: #e9edf5;
+      padding: 22px 28px;
+      font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>PTS</strong></div>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Strategic Procurement Capability</h1>
+    <p class="lead">We are an integrated supplier for NSPA procurement programs with NATO NCAGE code (022CJ) and U.S. federal market identifiers in place.</p>
+
+    <div class="badges">
+      <div class="badge">NSPA Registered Supplier</div>
+      <div class="badge">NCAGE: 022CJ</div>
+      <div class="badge">UEI: Z1VDMSSCTGKS</div>
+      <div class="badge">SAM.gov Active</div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>NSPA</strong> — Positioned with logistics compliance and quality assurance for NATO support operations.
+      </div>
+      <div class="timeline-item">
+        <strong>NCAGE 022CJ</strong> — Verified NATO codification enables fast responses to alliance tasking with flexible sourcing.
+      </div>
+      <div class="timeline-item">
+        <strong>UEI Z1VDMSSCTGKS</strong> — Identity validation completed for U.S. federal and defense markets.
+      </div>
+      <div class="timeline-item">
+        <strong>SAM.gov</strong> — Active registration ensures transparent contracting and international compliance.
+      </div>
+    </div>
+
+    <div class="estonia">
+      <h2>Estonia HQ, Global Delivery</h2>
+      <p>Our Tallinn headquarters connects directly into Baltic and NATO logistics corridors while accredited customs brokers provide end-to-end traceability across EU and overseas deliveries.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div><strong>Address:</strong> Põhja pst 27, 10415 Tallinn, Estonia</div>
+    <div><strong>Business Registration:</strong> Estonian Commercial Register (Reg. No: 14928765)</div>
+    <div><strong>Compliance:</strong> Full adherence to privacy, import/export and sanctions regulations; all requests are subject to AML/KYC checks.</div>
+  </footer>
+</body>
+</html>
