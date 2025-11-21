@@ -6,7 +6,7 @@
   <title>PTS Defense | Hakkımızda</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body data-page="about">
   <header>
     <div class="navbar">
       <div class="logo">
@@ -18,19 +18,37 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Ana Sayfa</a></li>
-          <li><a class="active" href="about.html">Hakkımızda</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
+          <li><a data-i18n="nav.home" href="index.html">Ana Sayfa</a></li>
+          <li><a class="active" data-i18n="nav.about" href="about.html">Hakkımızda</a></li>
+          <li><a data-i18n="nav.contact" href="contact.html">Kontakt</a></li>
         </ul>
+        <div class="language-switch" aria-label="Dil seçenekleri">
+          <a href="#" data-lang="tr" aria-label="Türkçe">
+            <span class="flag" aria-hidden="true">🇹🇷</span>
+            <span class="sr-only">Türkçe</span>
+          </a>
+          <a href="#" data-lang="en" aria-label="English">
+            <span class="flag" aria-hidden="true">🇬🇧</span>
+            <span class="sr-only">English</span>
+          </a>
+          <a href="#" data-lang="fr" aria-label="Français">
+            <span class="flag" aria-hidden="true">🇫🇷</span>
+            <span class="sr-only">Français</span>
+          </a>
+          <a href="#" data-lang="de" aria-label="Deutsch">
+            <span class="flag" aria-hidden="true">🇩🇪</span>
+            <span class="sr-only">Deutsch</span>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
 
   <section class="hero hero-compact">
     <div class="content">
-      <div class="breadcrumb">Ana Sayfa / Hakkımızda</div>
-      <h1>PTS Defense: güvenilir uluslararası tedarikçi</h1>
-      <p class="subheading">Elektronik harp, radar ve OEM üretim kabiliyetlerini NATO ve müttefik gereksinimleriyle uyumlu olarak geliştiriyoruz.</p>
+      <div class="breadcrumb" data-i18n="about.breadcrumb">Ana Sayfa / Hakkımızda</div>
+      <h1 data-i18n="about.hero.title">PTS Defense: güvenilir uluslararası tedarikçi</h1>
+      <p class="subheading" data-i18n="about.hero.body">Elektronik harp, radar ve OEM üretim kabiliyetlerini NATO ve müttefik gereksinimleriyle uyumlu olarak geliştiriyoruz.</p>
     </div>
   </section>
 
@@ -38,22 +56,22 @@
     <div class="content">
       <div class="grid-two">
         <div class="card">
-          <h3>Kurum kimliği</h3>
-          <p>Estonya merkezli PTS Defense, Avrupa Birliği ve NATO tedarik zincirine entegre çözümler sunar.</p>
+          <h3 data-i18n="about.identity.title">Kurum kimliği</h3>
+          <p data-i18n="about.identity.body">Estonya merkezli PTS Defense, Avrupa Birliği ve NATO tedarik zincirine entegre çözümler sunar.</p>
           <ul class="list">
-            <li>NCAGE kodu: <span class="highlight">022CJ</span></li>
-            <li>UEI ID: <span class="highlight">Z1VDMSSCTGKS</span></li>
-            <li>NATO NSPA vendor kaydı: <strong>aktif</strong></li>
-            <li>SAM.gov tedarikçi kaydı: <strong>aktif</strong></li>
+            <li data-i18n="about.identity.item1">NCAGE kodu: <span class="highlight">022CJ</span></li>
+            <li data-i18n="about.identity.item2">UEI ID: <span class="highlight">Z1VDMSSCTGKS</span></li>
+            <li data-i18n="about.identity.item3">NATO NSPA vendor kaydı: <strong>aktif</strong></li>
+            <li data-i18n="about.identity.item4">SAM.gov tedarikçi kaydı: <strong>aktif</strong></li>
           </ul>
         </div>
         <div class="card">
-          <h3>Operasyonel yaklaşım</h3>
-          <p>Gereksinim analizi, çözüm mimarisi, üretim ve lojistik destek süreçlerinde çevik ve şeffaf ilerliyoruz.</p>
+          <h3 data-i18n="about.ops.title">Operasyonel yaklaşım</h3>
+          <p data-i18n="about.ops.body">Gereksinim analizi, çözüm mimarisi, üretim ve lojistik destek süreçlerinde çevik ve şeffaf ilerliyoruz.</p>
           <ul class="list">
-            <li>ITAR ve ihracat kontrol süreçlerinde danışmanlık</li>
-            <li>Çoklu domain entegrasyonu (kara, hava, deniz, siber)</li>
-            <li>Yaşam döngüsü destek ve modernizasyon planları</li>
+            <li data-i18n="about.ops.item1">ITAR ve ihracat kontrol süreçlerinde danışmanlık</li>
+            <li data-i18n="about.ops.item2">Çoklu domain entegrasyonu (kara, hava, deniz, siber)</li>
+            <li data-i18n="about.ops.item3">Yaşam döngüsü destek ve modernizasyon planları</li>
           </ul>
         </div>
       </div>
@@ -62,19 +80,19 @@
 
   <section class="section">
     <div class="content">
-      <h2>Yetkinliklerimiz</h2>
+      <h2 data-i18n="about.skills.title">Yetkinliklerimiz</h2>
       <div class="cards">
         <div class="card">
-          <h3>Elektronik Harp</h3>
-          <p>Spektrum farkındalığı, bastırma ve aldatma görevleri için programlanabilir jammer mimarileri.</p>
+          <h3 data-i18n="about.skills.ew.title">Elektronik Harp</h3>
+          <p data-i18n="about.skills.ew.body">Spektrum farkındalığı, bastırma ve aldatma görevleri için programlanabilir jammer mimarileri.</p>
         </div>
         <div class="card">
-          <h3>Radar Teknolojileri</h3>
-          <p>Kompakt gözetleme radarları, modüler anten sistemleri ve sinyal işleme optimizasyonu.</p>
+          <h3 data-i18n="about.skills.radar.title">Radar Teknolojileri</h3>
+          <p data-i18n="about.skills.radar.body">Kompakt gözetleme radarları, modüler anten sistemleri ve sinyal işleme optimizasyonu.</p>
         </div>
         <div class="card">
-          <h3>OEM ve Üretim</h3>
-          <p>Groza ailesi dahil lisanslı üretim, kalite güvence ve kalifikasyon desteği.</p>
+          <h3 data-i18n="about.skills.oem.title">OEM ve Üretim</h3>
+          <p data-i18n="about.skills.oem.body">Groza ailesi dahil lisanslı üretim, kalite güvence ve kalifikasyon desteği.</p>
         </div>
       </div>
     </div>
@@ -87,25 +105,26 @@
           <div class="logo-mark"></div>
           <div>PTS Defense</div>
         </div>
-        <p class="tagline">Estonya merkezli uluslararası savunma tedarikçisi.</p>
+        <p class="tagline" data-i18n="footer.tagline">Estonya merkezli uluslararası savunma tedarikçisi.</p>
       </div>
       <div>
-        <strong>Kurumsal</strong>
+        <strong data-i18n="footer.company">Kurumsal</strong>
         <ul class="list">
-          <li><a href="about.html">Hakkımızda</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
+          <li><a data-i18n="nav.about" href="about.html">Hakkımızda</a></li>
+          <li><a data-i18n="nav.contact" href="contact.html">Kontakt</a></li>
         </ul>
       </div>
       <div>
-        <strong>Ürünler</strong>
+        <strong data-i18n="footer.products">Ürünler</strong>
         <ul class="list">
-          <li><a href="products/rf-45.html">PTS RF-45 Jammer</a></li>
-          <li><a href="products/falcon.html">PTS Falcon Jammer</a></li>
-          <li><a href="products/r400.html">PTS R-400 Sentinel Radar</a></li>
-          <li><a href="products/groza.html">Groza-1 / Groza-2 OEM Production</a></li>
+          <li><a data-i18n="index.products.rf45.title" href="products/rf-45.html">PTS RF-45 Jammer</a></li>
+          <li><a data-i18n="index.products.falcon.title" href="products/falcon.html">PTS Falcon Jammer</a></li>
+          <li><a data-i18n="index.products.r400.title" href="products/r400.html">PTS R-400 Sentinel Radar</a></li>
+          <li><a data-i18n="index.products.groza.title" href="products/groza.html">Groza-1 / Groza-2 OEM Production</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script src="assets/js/lang.js"></script>
 </body>
 </html>
