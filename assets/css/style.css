@@ -537,3 +537,42 @@ h1, h2, h3, h4 {
     padding: 10px 0;
 }
 
+/* ---- Improved Side Menu Links ---- */
+
+.side-menu ul li a {
+    display: block;
+    padding: 14px 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.25s ease;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+/* Hover efekt: sağa kayma + glow */
+.side-menu ul li a:hover {
+    padding-left: 18px;
+    border-color: rgba(124, 242, 196, 0.35); /* accent */
+    color: var(--accent);
+    background: rgba(124, 242, 196, 0.08);
+    box-shadow: 0 0 14px rgba(124, 242, 196, 0.18);
+}
+
+/* Close butonunu güzelleştirme */
+.close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text);
+    padding: 10px;
+    margin-bottom: 30px;
+    transition: 0.25s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent);
+    transform: scale(1.15);
+}
