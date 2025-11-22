@@ -515,4 +515,11 @@ h1, h2, h3, h4 {
   .side-menu {
     width: 100%;
   }
+}.side-menu ul li a {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
