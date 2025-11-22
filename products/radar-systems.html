@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTS Defense | Radar Systems</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>PTS Defense</div>
+          <small class="tagline">Estonia based • NATO NSPA vendor</small>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a class="active" href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="menuToggle">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <aside class="side-menu" id="sideMenu">
+    <div class="close-btn" id="menuClose">✕</div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../products.html">Products</a></li>
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Capabilities</a></li>
+      <li><a href="#">Partnerships</a></li>
+      <li><a href="#">Certifications</a></li>
+      <li><a href="#">Documents</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <section class="section">
+    <div class="content">
+      <span class="badge">Radar Systems</span>
+      <h1>Surveillance & Tactical Radar Systems</h1>
+      <p class="subheading">3D, 2D and compact radars engineered for border security, base protection and airspace monitoring.</p>
+
+      <div class="product-grid">
+
+        <div class="card">
+          <h3>PTS R-400 Sentinel</h3>
+          <p>360° compact ground radar for UAV & vehicle detection.</p>
+          <span class="pill">Ground Radar</span>
+          <div class="cta-row">
+            <a class="btn btn-ghost" href="r400.html">Technical details</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>PTS R-700 SkyDome</h3>
+          <p>Medium/long-range 3D surveillance radar.</p>
+          <span class="pill">Air Radar</span>
+          <div class="cta-row">
+            <a class="btn btn-ghost" href="r700.html">Technical details</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>PTS R-150 Recon</h3>
+          <p>Portable rapid-deployment ground radar.</p>
+          <span class="pill">Portable Radar</span>
+          <div class="cta-row">
+            <a class="btn btn-ghost" href="r150.html">Technical details</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content">
+      <p class="tagline">Estonia based international defence supplier.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuClose = document.getElementById('menuClose');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    menuToggle.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+      menuOverlay.classList.add('show');
+    });
+
+    menuClose.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+      menuOverlay.classList.remove('show');
+    });
+
+    menuOverlay.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+      menuOverlay.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
