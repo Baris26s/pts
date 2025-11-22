@@ -129,7 +129,7 @@ nav a.active {
 .side-menu {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -360px;             /* EKRANIN DISINDA BAŞLASIN */
   width: 360px;
   height: 100vh;
   background: rgba(10, 15, 22, 0.96);
@@ -138,8 +138,7 @@ nav a.active {
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55);
   padding: 40px 30px;
   z-index: 9999;
-  transform: translateX(100%);   /* başlangıçta tamamen dışarıda */
-  transition: transform 0.35s ease;
+  transition: right 0.35s ease;
 
   /* radar grid look */
   background-image: linear-gradient(
@@ -155,7 +154,8 @@ nav a.active {
 }
 
 .side-menu.open {
-  transform: translateX(0);
+  right: 0;                  /* AÇILINCA İÇERİ GİRSİN */
+}
 }
 
 .close-btn {
