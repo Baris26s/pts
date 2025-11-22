@@ -762,6 +762,51 @@ h1, h2, h3, h4 {
     transform: scale(1.4);
     opacity: 0;
   }
+}/* RADAR ANIMASYONU ------------------------------------------------ */
+
+.radar-wrapper {
+  position: absolute;
+  right: 60px;
+  top: 90px;
+  width: 260px;
+  height: 260px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(124, 242, 196, 0.4);
+  box-shadow: 0 0 18px rgba(124, 242, 196, 0.3);
 }
+
+.radar-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,242,196,0.25) 0%, transparent 70%);
+  animation: radarPulse 2.8s infinite ease-out;
+  opacity: 0.5;
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(124,242,196,0.35) 0deg,
+    rgba(124,242,196,0.05) 60deg,
+    transparent 120deg
+  );
+  animation: radarSweep 2.2s linear infinite;
+}
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 
