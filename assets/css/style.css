@@ -1,3 +1,7 @@
+/* ========================= */
+/*      GLOBAL SETTINGS      */
+/* ========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
@@ -11,24 +15,21 @@
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.6;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
-/* ---------------- NAVBAR ---------------- */
+/* ========================= */
+/*          NAVBAR           */
+/* ========================= */
 
 header {
   position: sticky;
@@ -66,14 +67,7 @@ header {
 
 .tagline {
   color: var(--muted);
-  margin: 4px 0 0;
   font-size: 12px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
 }
 
 nav ul {
@@ -88,62 +82,98 @@ nav a {
   font-weight: 600;
   padding: 10px 14px;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: .2s ease;
   color: var(--muted);
 }
 
 nav a:hover,
 nav a.active {
   color: var(--text);
-  background: rgba(124, 242, 196, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.25);
+  background: rgba(124,242,196,0.08);
+  box-shadow: inset 0 0 0 1px rgba(124,242,196,0.25);
 }
 
-/* language switch */
+/* ========================= */
+/*     HAMBURGER MENU        */
+/* ========================= */
 
-.language-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-left: 14px;
+.hamburger {
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 12px;
+  color: var(--text);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  width: 360px;
+  height: 100vh;
+  background: rgba(10, 15, 22, 0.96);
+  backdrop-filter: blur(14px);
   border-left: 1px solid var(--border);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.5);
+  padding: 40px 30px;
+  transition: .35s ease;
+  z-index: 9999;
+
+  background-image:
+      linear-gradient(rgba(124,242,196,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124,242,196,0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
 }
 
-.language-switch a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(124, 242, 196, 0.06);
-  box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+.side-menu.open { right: 0; }
+
+.close-btn {
+  font-size: 28px;
+  color: var(--text);
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-align: right;
+  transition: .2s ease;
 }
 
-.language-switch a:hover {
-  transform: translateY(-2px);
-  box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.5), 0 8px 20px rgba(0, 0, 0, 0.3);
+.close-btn:hover {
+  color: var(--accent);
+  transform: scale(1.12);
 }
 
-.language-switch .flag {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.side-menu ul {
+  list-style: none;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  margin: 0;
 }
 
-/* ---------------- HERO ---------------- */
+.side-menu ul li {
+  margin-bottom: 15px;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: 14px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  transition: .25s ease;
+}
+
+.side-menu ul li a:hover {
+  padding-left: 22px;
+  background: rgba(124,242,196,0.12);
+  border-color: rgba(124,242,196,0.4);
+  color: var(--accent);
+  box-shadow: 0 0 14px rgba(124,242,196,0.2);
+}
+
+/* ========================= */
+/*           HERO            */
+/* ========================= */
 
 .hero {
   background: var(--gradient);
@@ -153,121 +183,83 @@ nav a.active {
   overflow: hidden;
 }
 
-.hero::after,
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero::after {
-  background: radial-gradient(circle at 20% 20%, rgba(124, 242, 196, 0.14), transparent 42%);
-  opacity: 0.8;
-}
-
-.hero::before {
-  background: radial-gradient(circle at 80% 0%, rgba(38, 120, 177, 0.16), transparent 46%);
-}
-
 .hero-grid {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
   gap: 26px;
   position: relative;
   z-index: 2;
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  background: rgba(124,242,196,0.15);
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(124, 242, 196, 0.12);
   color: var(--accent);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: .08em;
   font-size: 12px;
-  box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.3);
 }
 
-h1, h2, h3, h4 {
-  color: var(--text);
-  letter-spacing: 0.02em;
+h1 { font-size: clamp(32px, 4vw, 46px); }
+
+/* ========================= */
+/*       RADAR ANIMATION     */
+/* ========================= */
+
+.radar-wrapper {
+  position: absolute;
+  right: 60px;
+  top: 90px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(124,242,196,0.35);
+  box-shadow: 0 0 22px rgba(124,242,196,0.35);
+  z-index: 3;
 }
 
-.hero h1 {
-  font-size: clamp(32px, 4vw, 46px);
-  margin: 18px 0 12px;
+.radar-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,242,196,0.28), transparent 70%);
+  animation: radarPulse 2.4s infinite ease-out;
 }
 
-.hero p {
-  color: var(--muted);
-  font-size: 18px;
+@keyframes radarPulse {
+  0%   { transform: scale(0.25); opacity: .8; }
+  100% { transform: scale(1); opacity: 0; }
 }
 
-/* ---------------- BUTTONS ---------------- */
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+      rgba(124,242,196,0.5),
+      rgba(124,242,196,0.15) 40deg,
+      transparent 120deg
+  );
+  animation: radarSweep 2s linear infinite;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 18px;
-  border-radius: 10px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: #0a0f17;
-  box-shadow: 0 10px 30px rgba(124, 242, 196, 0.35);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(124, 242, 196, 0.4);
-}
-
-.btn-ghost {
-  border-color: rgba(124, 242, 196, 0.3);
-  color: var(--text);
-  background: rgba(124, 242, 196, 0.05);
-}
-
-.btn-ghost:hover {
-  border-color: rgba(124, 242, 196, 0.8);
-  transform: translateY(-2px);
-}
-
-/* ---------------- SECTIONS / CARDS ---------------- */
+/* ========================= */
+/*          CARDS            */
+/* ========================= */
 
 .section {
   padding: 70px 22px;
   border-bottom: 1px solid var(--border);
-  background:
-    radial-gradient(circle at 0 0, rgba(124, 242, 196, 0.04), transparent 30%),
-    radial-gradient(circle at 100% 30%, rgba(40, 122, 178, 0.08), transparent 36%),
-    #0b0e12;
-}
-
-.section .content {
-  max-width: 1180px;
-  margin: 0 auto;
 }
 
 .cards {
@@ -281,127 +273,21 @@ h1, h2, h3, h4 {
   border-radius: 16px;
   padding: 22px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
-  flex: 1 1 calc(20% - 20px); /* 5 ürün yan yana, küçülünce wrap */
   min-width: 260px;
+  flex: 1 1 calc(20% - 20px);
+  box-shadow: var(--shadow);
 }
 
-.card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 70% 0%, rgba(124, 242, 196, 0.08), transparent 42%);
-  opacity: 0.8;
-  pointer-events: none;
-}
+.card h3 { margin-top: 0; }
+.card p { color: var(--muted); }
 
-.card h3 {
-  margin-top: 0;
-}
-
-.card p {
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-/* tables */
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
-}
-
-.table th,
-.table td {
-  padding: 12px 14px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-
-.table th {
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 12px;
-}
-
-.table td {
-  color: var(--text);
-}
-
-/* pill tag */
-
-.pill {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(124, 242, 196, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(124, 242, 196, 0.3);
-  font-weight: 600;
-  font-size: 12px;
-}
-
-/* grids */
-
-.grid-two {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-}
-
-/* stats */
-
-.stat {
-  padding: 18px;
-  background: rgba(19, 25, 34, 0.8);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-.stat strong {
-  display: block;
-  font-size: 22px;
-  color: var(--accent);
-}
-
-/* text helpers */
-
-.breadcrumb {
-  color: var(--muted);
-  margin: 16px 0 8px;
-}
-
-.subheading {
-  color: var(--muted);
-  margin: 10px 0 22px;
-}
-
-.highlight {
-  color: var(--accent);
-}
-
-.list {
-  padding-left: 18px;
-  color: var(--muted);
-}
-
-.list li {
-  margin-bottom: 6px;
-}
-
-.hero-compact {
-  padding: 70px 22px;
-}
-
-/* ---------------- FOOTER ---------------- */
+/* ========================= */
+/*          FOOTER           */
+/* ========================= */
 
 .footer {
   background: #090c11;
-  padding: 30px 22px 40px;
+  padding: 35px 22px;
   color: var(--muted);
 }
 
@@ -409,404 +295,15 @@ h1, h2, h3, h4 {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 14px;
 }
 
-.footer a:hover {
-  color: var(--accent);
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media (max-width: 900px) {
-  .card {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
+/* ========================= */
+/*        RESPONSIVE         */
+/* ========================= */
 
 @media (max-width: 700px) {
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .cta-row {
-    flex-direction: column;
-  }
-
-  .navbar {
-    gap: 14px;
-  }
-
-  .card {
-    flex: 1 1 100%;
-  }
-}/* Hamburger icon */
-/* ---------------- HAMBURGER MENU ---------------- */
-
-.hamburger {
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px;
-  user-select: none;
-  color: var(--text);
-  display: flex;
-  align-items: center;
+  .radar-wrapper { display: none; }
 }
-
-/* Side Menu Panel */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: -360px; /* kapalıyken gizli */
-  width: 360px;
-  height: 100vh;
-  background: rgba(10, 15, 22, 0.97);
-  backdrop-filter: blur(14px);
-  border-left: 1px solid var(--border);
-  box-shadow: -6px 0 40px rgba(0, 0, 0, 0.55);
-  padding: 40px 30px;
-  transition: right 0.35s ease;
-  z-index: 99999;
-}
-
-.side-menu.open {
-  right: 0;
-}
-
-/* Close Button */
-.close-btn {
-  font-size: 28px;
-  cursor: pointer;
-  color: var(--text);
-  text-align: right;
-  margin-bottom: 30px;
-}
-
-/* Menu Links */
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.side-menu ul li {
-  margin-bottom: 18px;
-}
-
-.side-menu ul li a {
-  display: block;
-  padding: 12px 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text);
-  transition: 0.25s ease;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.side-menu ul li a:hover {
-  color: var(--accent);
-  padding-left: 6px;
-}
-
-/* Mobile optimization */
-@media (max-width: 480px) {
-  .side-menu {
-    width: 100%;
-  }
-}.side-menu ul li a {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.side-menu ul {
-    display: block !important;
-}
-
-.side-menu ul li {
-    margin-bottom: 18px;
-    display: block;
-}
-
-.side-menu ul li a {
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-}
-
-/* ---- Improved Side Menu Links ---- */
-
-.side-menu ul li a {
-    display: block;
-    padding: 14px 12px;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    background: rgba(255,255,255,0.02);
-    transition: all 0.25s ease;
-    margin-bottom: 14px;
-    letter-spacing: 0.3px;
-}
-
-/* Hover efekt: sağa kayma + glow */
-.side-menu ul li a:hover {
-    padding-left: 18px;
-    border-color: rgba(124, 242, 196, 0.35); /* accent */
-    color: var(--accent);
-    background: rgba(124, 242, 196, 0.08);
-    box-shadow: 0 0 14px rgba(124, 242, 196, 0.18);
-}
-
-/* Close butonunu güzelleştirme */
-.close-btn {
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text);
-    padding: 10px;
-    margin-bottom: 30px;
-    transition: 0.25s ease;
-}
-
-.close-btn:hover {
-    color: var(--accent);
-    transform: scale(1.15);
-}
-/* --- Side menu dark grid background --- */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: -360px;
-  width: 360px;
-  height: 100vh;
-  background: rgba(10, 15, 22, 0.96);
-  backdrop-filter: blur(14px);
-  border-left: 1px solid var(--border);
-  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55);
-  padding: 40px 30px;
-  transition: right 0.35s ease;
-  z-index: 99999;
-
-  /* GRID OVERLAY */
-  background-image:
-      linear-gradient(rgba(124,242,196,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(124,242,196,0.05) 1px, transparent 1px);
-  background-size: 34px 34px;
-}
-/* Overlay behind side menu */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(3px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 9999;
-}
-
-.menu-overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-.side-menu ul li a {
-    display: block;
-    padding: 14px 14px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.05);
-    margin-bottom: 14px;
-    transition: 0.25s ease;
-}
-
-/* hover efekti */
-.side-menu ul li a:hover {
-    padding-left: 20px;
-    border-color: rgba(124,242,196,0.4);
-    background: rgba(124,242,196,0.10);
-    color: var(--accent);
-    box-shadow: 0 0 16px rgba(124,242,196,0.25);
-}
-.side-menu {
-  transform: translateX(0);
-}
-
-.side-menu.open {
-  animation: slideIn 0.35s ease forwards;
-}
-
-@keyframes slideIn {
-  from { right: -360px; }
-  to   { right: 0; }
-}
-
-}/* ===================== */
-/* RADAR ANIMATION LAYER */
-/* ===================== */
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Radar grid */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-      radial-gradient(circle, rgba(124,242,196,0.12) 0%, transparent 60%),
-      repeating-linear-gradient(
-          0deg,
-          rgba(124,242,196,0.04) 0px,
-          rgba(124,242,196,0.04) 1px,
-          transparent 1px,
-          transparent 40px
-      ),
-      repeating-linear-gradient(
-          90deg,
-          rgba(124,242,196,0.04) 0px,
-          rgba(124,242,196,0.04) 1px,
-          transparent 1px,
-          transparent 40px
-      );
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Radar sweeping line */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(
-      from 0deg,
-      rgba(124,242,196,0.25),
-      rgba(124,242,196,0) 45%
-  );
-  animation: radarSweep 5s linear in
-  /* ---------------- RADAR ANIMATION ---------------- */
-
-.radar-container {
-  width: 260px;
-  height: 260px;
-  margin: 40px auto 0;
-  position: relative;
-}
-
-.radar-circle {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 2px solid rgba(124, 242, 196, 0.3);
-  background: radial-gradient(circle, rgba(124, 242, 196, 0.12) 0%, rgba(10, 15, 22, 1) 70%);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Dönen tarama ışını */
-.radar-beam {
-  position: absolute;
-  width: 50%;
-  height: 2px;
-  background: rgba(124, 242, 196, 0.8);
-  top: 50%;
-  left: 50%;
-  transform-origin: left center;
-  animation: spin 4s linear infinite;
-  box-shadow: 0 0 12px rgba(124, 242, 196, 0.8);
-}
-
-/* Yay şeklinde dalga efekti */
-.radar-wave {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(124, 242, 196, 0.2);
-  animation: wave 2.8s infinite ease-out;
-}
-
-.radar-wave:nth-child(2) {
-  animation-delay: 0.8s;
-}
-
-.radar-wave:nth-child(3) {
-  animation-delay: 1.6s;
-}
-
-/* Animasyonlar */
-@keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes wave {
-  0% {
-    transform: scale(0.3);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}/* RADAR ANIMASYONU ------------------------------------------------ */
-
-.radar-wrapper {
-  position: absolute;
-  right: 60px;
-  top: 90px;
-  width: 260px;
-  height: 260px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid rgba(124, 242, 196, 0.4);
-  box-shadow: 0 0 18px rgba(124, 242, 196, 0.3);
-}
-
-.radar-circle {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(124,242,196,0.25) 0%, transparent 70%);
-  animation: radarPulse 2.8s infinite ease-out;
-  opacity: 0.5;
-}
-
-@keyframes radarPulse {
-  0% { transform: scale(0.2); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 0; }
-}
-
-.radar-sweep {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: conic-gradient(
-    rgba(124,242,196,0.35) 0deg,
-    rgba(124,242,196,0.05) 60deg,
-    transparent 120deg
-  );
-  animation: radarSweep 2.2s linear infinite;
-}
-
-@keyframes radarSweep {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-
 
