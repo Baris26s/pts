@@ -443,8 +443,10 @@ h1, h2, h3, h4 {
     flex: 1 1 100%;
   }
 }/* Hamburger icon */
+/* ---------------- HAMBURGER MENU ---------------- */
+
 .hamburger {
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
   padding: 10px;
   user-select: none;
@@ -453,51 +455,64 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 
-/* Hidden menu panel */
+/* Side Menu Panel */
 .side-menu {
   position: fixed;
   top: 0;
-  right: -280px; /* panel kapalıyken gizli */
-  width: 280px;
+  right: -360px; /* kapalıyken gizli */
+  width: 360px;
   height: 100vh;
-  background: rgba(15, 20, 28, 0.98);
-  backdrop-filter: blur(12px);
+  background: rgba(10, 15, 22, 0.97);
+  backdrop-filter: blur(14px);
   border-left: 1px solid var(--border);
-  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.5);
-  padding: 30px 20px;
-  transition: right 0.3s ease;
-  z-index: 9999;
+  box-shadow: -6px 0 40px rgba(0, 0, 0, 0.55);
+  padding: 40px 30px;
+  transition: right 0.35s ease;
+  z-index: 99999;
 }
 
 .side-menu.open {
-  right: 0; /* tıklayınca açılır */
+  right: 0;
 }
 
+/* Close Button */
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text);
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+/* Menu Links */
 .side-menu ul {
   list-style: none;
   padding: 0;
-  margin-top: 40px;
+  margin: 0;
 }
 
 .side-menu ul li {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .side-menu ul li a {
-  color: var(--text);
-  font-size: 18px;
+  display: block;
+  padding: 12px 0;
+  font-size: 20px;
   font-weight: 600;
-  transition: 0.2s;
+  color: var(--text);
+  transition: 0.25s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .side-menu ul li a:hover {
   color: var(--accent);
+  padding-left: 6px;
 }
 
-/* close button */
-.close-btn {
-  font-size: 24px;
-  cursor: pointer;
-  text-align: right;
-  color: var(--text);
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .side-menu {
+    width: 100%;
+  }
 }
