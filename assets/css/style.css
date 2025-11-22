@@ -100,6 +100,11 @@ nav a.active {
   box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.25);
 }
 
+/* GB dil kutusunu gizle */
+.language-switch {
+  display: none;
+}
+
 /* -------------- HAMBURGER + SIDE MENU -------------- */
 
 .hamburger {
@@ -124,7 +129,7 @@ nav a.active {
 .side-menu {
   position: fixed;
   top: 0;
-  right: -360px;
+  right: 0;
   width: 360px;
   height: 100vh;
   background: rgba(10, 15, 22, 0.96);
@@ -132,8 +137,9 @@ nav a.active {
   border-left: 1px solid var(--border);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55);
   padding: 40px 30px;
-  transition: right 0.35s ease;
   z-index: 9999;
+  transform: translateX(100%);   /* başlangıçta tamamen dışarıda */
+  transition: transform 0.35s ease;
 
   /* radar grid look */
   background-image: linear-gradient(
@@ -149,7 +155,7 @@ nav a.active {
 }
 
 .side-menu.open {
-  right: 0;
+  transform: translateX(0);
 }
 
 .close-btn {
@@ -252,7 +258,7 @@ nav a.active {
   z-index: 1;
 }
 
-/* radar sweep tum arka planda donuyor */
+/* radar sweep tüm arka planda dönüyor */
 .hero::after {
   content: "";
   position: absolute;
@@ -288,7 +294,7 @@ nav a.active {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 26px;
   position: relative;
-  z-index: 2; /* radar arkasinda kalsin */
+  z-index: 2; /* radar arkasında kalsın */
 }
 
 .badge {
