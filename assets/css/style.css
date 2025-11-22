@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-/* ============== THEME TOKENS ============== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 :root {
   --bg: #0b0e12;
@@ -21,7 +19,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   line-height: 1.6;
 }
 
@@ -30,13 +29,13 @@ a {
   text-decoration: none;
 }
 
-/* ============== NAVBAR ============== */
+/* -------------- NAVBAR -------------- */
 
 header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(11, 14, 18, 0.92);
+  background: rgba(11, 14, 18, 0.96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
@@ -101,90 +100,71 @@ nav a.active {
   box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.25);
 }
 
-/* language switch */
-
-.language-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-left: 14px;
-  border-left: 1px solid var(--border);
-}
-
-.language-switch a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(124, 242, 196, 0.06);
-  box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
-}
-
-.language-switch a:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    inset 0 0 0 1px rgba(124, 242, 196, 0.5),
-    0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* ============== HAMBURGER + SIDE MENU ============== */
+/* -------------- HAMBURGER + SIDE MENU -------------- */
 
 .hamburger {
-  font-size: 30px;
+  font-size: 26px;
   cursor: pointer;
-  padding: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   user-select: none;
   color: var(--text);
   display: flex;
   align-items: center;
 }
 
-/* panel kapali hali */
+.hamburger:hover {
+  background: rgba(124, 242, 196, 0.1);
+  border-color: rgba(124, 242, 196, 0.5);
+}
+
+/* panel */
 .side-menu {
   position: fixed;
   top: 0;
   right: -360px;
   width: 360px;
   height: 100vh;
-  padding: 40px 30px;
   background: rgba(10, 15, 22, 0.96);
   backdrop-filter: blur(14px);
   border-left: 1px solid var(--border);
   box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55);
+  padding: 40px 30px;
   transition: right 0.35s ease;
-  z-index: 99999;
+  z-index: 9999;
 
-  /* grid background */
-  background-image:
-    linear-gradient(rgba(124, 242, 196, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 242, 196, 0.05) 1px, transparent 1px);
+  /* radar grid look */
+  background-image: linear-gradient(
+      rgba(124, 242, 196, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(124, 242, 196, 0.05) 1px,
+      transparent 1px
+    );
   background-size: 34px 34px;
 }
 
-/* acik hali */
 .side-menu.open {
   right: 0;
 }
 
 .close-btn {
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
   color: var(--text);
-  padding: 10px;
-  margin-bottom: 30px;
   text-align: right;
+  margin-bottom: 30px;
   transition: 0.25s ease;
 }
 
 .close-btn:hover {
   color: var(--accent);
-  transform: scale(1.12);
+  transform: scale(1.1);
 }
-
-/* side menu linkleri */
 
 .side-menu ul {
   list-style: none;
@@ -198,41 +178,34 @@ nav a.active {
 
 .side-menu ul li a {
   display: block;
-  padding: 14px 14px;
-  font-size: 20px;
+  padding: 12px 14px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text);
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  letter-spacing: 0.3px;
-  transition: 0.25s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 .side-menu ul li a:hover {
   padding-left: 20px;
   border-color: rgba(124, 242, 196, 0.4);
-  background: rgba(124, 242, 196, 0.10);
+  background: rgba(124, 242, 196, 0.1);
   color: var(--accent);
   box-shadow: 0 0 16px rgba(124, 242, 196, 0.25);
 }
 
-/* opsiyonel karartma, su an js yok ama ileride lazim olabilir */
+/* overlay */
 .menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(3px);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .menu-overlay.show {
@@ -240,7 +213,7 @@ nav a.active {
   visibility: visible;
 }
 
-/* ============== HERO ============== */
+/* -------------- HERO + RADAR BACKGROUND -------------- */
 
 .hero {
   background: var(--gradient);
@@ -250,15 +223,62 @@ nav a.active {
   overflow: hidden;
 }
 
-.hero::after {
+/* radar grid + glow */
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(124, 242, 196, 0.18),
+      transparent 45%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(124, 242, 196, 0.08) 0,
+      rgba(124, 242, 196, 0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(124, 242, 196, 0.08) 0,
+      rgba(124, 242, 196, 0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  opacity: 0.18;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(124, 242, 196, 0.14), transparent 42%),
-    radial-gradient(circle at 80% 0%, rgba(38, 120, 177, 0.16), transparent 46%);
-  opacity: 0.9;
+  z-index: 1;
+}
+
+/* radar sweep tum arka planda donuyor */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    rgba(124, 242, 196, 0.35),
+    rgba(124, 242, 196, 0.05) 60deg,
+    transparent 120deg
+  );
+  mix-blend-mode: screen;
+  animation: radarSweep 7s linear infinite;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes radarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hero-grid {
@@ -268,7 +288,7 @@ nav a.active {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 26px;
   position: relative;
-  z-index: 2;
+  z-index: 2; /* radar arkasinda kalsin */
 }
 
 .badge {
@@ -286,7 +306,10 @@ nav a.active {
   box-shadow: inset 0 0 0 1px rgba(124, 242, 196, 0.3);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--text);
   letter-spacing: 0.02em;
 }
@@ -301,62 +324,7 @@ h1, h2, h3, h4 {
   font-size: 18px;
 }
 
-/* ============== RADAR ANIMATION ============== */
-
-.radar-wrapper {
-  position: absolute;
-  right: 80px;
-  top: 110px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 1px solid rgba(124, 242, 196, 0.4);
-  background: radial-gradient(circle, rgba(124, 242, 196, 0.15) 0%, rgba(10, 15, 22, 1) 70%);
-  box-shadow: 0 0 18px rgba(124, 242, 196, 0.35);
-  overflow: hidden;
-}
-
-.radar-circle {
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  border: 2px solid rgba(124, 242, 196, 0.3);
-  box-shadow: 0 0 14px rgba(124, 242, 196, 0.4);
-}
-
-/* ekstra halkalar */
-.radar-circle::before,
-.radar-circle::after {
-  content: "";
-  position: absolute;
-  inset: 18%;
-  border-radius: 50%;
-  border: 1px solid rgba(124, 242, 196, 0.25);
-}
-
-.radar-circle::after {
-  inset: 35%;
-  opacity: 0.7;
-}
-
-/* donen tarama kismi */
-.radar-sweep {
-  position: absolute;
-  inset: -40%;
-  border-radius: 50%;
-  background: conic-gradient(
-    rgba(124, 242, 196, 0.4),
-    rgba(124, 242, 196, 0) 40%
-  );
-  animation: radarSweep 2.4s linear infinite;
-}
-
-@keyframes radarSweep {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* ============== BUTTONS ============== */
+/* -------------- BUTTONS -------------- */
 
 .cta-row {
   display: flex;
@@ -375,7 +343,8 @@ h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: 0.01em;
   border: 1px solid transparent;
-  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .btn-primary {
@@ -400,14 +369,21 @@ h1, h2, h3, h4 {
   transform: translateY(-2px);
 }
 
-/* ============== SECTIONS / CARDS ============== */
+/* -------------- SECTIONS / CARDS -------------- */
 
 .section {
   padding: 70px 22px;
   border-bottom: 1px solid var(--border);
-  background:
-    radial-gradient(circle at 0 0, rgba(124, 242, 196, 0.04), transparent 30%),
-    radial-gradient(circle at 100% 30%, rgba(40, 122, 178, 0.08), transparent 36%),
+  background: radial-gradient(
+      circle at 0 0,
+      rgba(124, 242, 196, 0.04),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 30%,
+      rgba(40, 122, 178, 0.08),
+      transparent 36%
+    ),
     #0b0e12;
 }
 
@@ -430,15 +406,19 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
-  flex: 1 1 calc(20% - 20px); /* 5 product card yan yana */
+  flex: 1 1 calc(20% - 20px);
   min-width: 260px;
 }
 
 .card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 70% 0%, rgba(124, 242, 196, 0.08), transparent 42%);
+  background: radial-gradient(
+    circle at 70% 0%,
+    rgba(124, 242, 196, 0.08),
+    transparent 42%
+  );
   opacity: 0.8;
   pointer-events: none;
 }
@@ -452,7 +432,7 @@ h1, h2, h3, h4 {
   margin-bottom: 12px;
 }
 
-/* tables */
+/* table */
 
 .table {
   width: 100%;
@@ -478,7 +458,7 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-/* pill tag */
+/* pill */
 
 .pill {
   display: inline-block;
@@ -491,7 +471,7 @@ h1, h2, h3, h4 {
   font-size: 12px;
 }
 
-/* grid helper */
+/* grid helpers */
 
 .grid-two {
   display: grid;
@@ -512,6 +492,10 @@ h1, h2, h3, h4 {
   display: block;
   font-size: 22px;
   color: var(--accent);
+}
+
+.stat span {
+  color: var(--muted);
 }
 
 /* text helpers */
@@ -535,11 +519,7 @@ h1, h2, h3, h4 {
   margin-bottom: 6px;
 }
 
-.hero-compact {
-  padding: 70px 22px;
-}
-
-/* ============== FOOTER ============== */
+/* -------------- FOOTER -------------- */
 
 .footer {
   background: #090c11;
@@ -559,21 +539,17 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
-/* ============== RESPONSIVE ============== */
+/* -------------- RESPONSIVE -------------- */
 
 @media (max-width: 900px) {
   .card {
     flex: 1 1 calc(50% - 20px);
   }
-
-  .radar-wrapper {
-    display: none; /* mobilde radar gizle, yazilar karismasin */
-  }
 }
 
 @media (max-width: 700px) {
   nav ul {
-    display: none; /* kucuk ekranda sadece hamburger kalsin istersen */
+    display: none; /* mobile'da sadece hamburger */
   }
 
   .cta-row {
@@ -586,5 +562,11 @@ h1, h2, h3, h4 {
 
   .card {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .side-menu {
+    width: 100%;
   }
 }
