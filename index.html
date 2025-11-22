@@ -27,21 +27,26 @@
 
         <div class="language-switch">
           <a href="?lang=en">🇬🇧</a>
-        <div class="hamburger" id="menu-btn">
-  ☰
+       <div class="hamburger" onclick="document.querySelector('.side-menu').classList.add('open')">
+    ☰
 </div>
 
-<div class="side-menu" id="side-menu">
-  <div class="close-btn" id="close-btn">✖</div>
+<div class="side-menu">
+    <div class="close-btn" onclick="document.querySelector('.side-menu').classList.remove('open')">✕</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Programs</a></li>
+        <li><a href="#">Capabilities</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Partnerships</a></li>
+        <li><a href="#">Certifications</a></li>
+        <li><a href="#">Documents</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
 
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="capabilities.html">Capabilities</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="programs.html">Programs</a></li>
-    <li><a href="documents.html">Documents</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
 </div>
 
