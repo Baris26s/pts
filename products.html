@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTS Defense | Product Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body data-page="products">
+  <!-- NAVBAR (aynı header) -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>PTS Defense</div>
+          <small class="tagline">Estonia based • NATO NSPA vendor</small>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="menuToggle">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+    <div class="close-btn" id="menuClose">✕</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Capabilities</a></li>
+      <li><a href="#">Partnerships</a></li>
+      <li><a href="#">Certifications</a></li>
+      <li><a href="#">Documents</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- HERO + CATEGORY GRID -->
+  <section class="products-hero">
+    <div class="content">
+      <span class="badge">Portfolio · Defence & Security Systems</span>
+      <h1>Integrated combat-proven systems for land, sea and air domains.</h1>
+      <p class="subheading">
+        Explore our portfolio from electronic warfare and radar to weapons, protection,
+        tactical equipment and mission-ready platforms.
+      </p>
+
+      <div class="category-grid">
+        <a class="category-card" href="products/ew-systems.html">
+          <span class="pill">Electronic Warfare</span>
+          <h3>EW Systems</h3>
+          <p>Jamming, spoofing and counter-drone EW platforms for complex threat environments.</p>
+        </a>
+
+        <a class="category-card" href="products/radar-systems.html">
+          <span class="pill">Sensors</span>
+          <h3>Radar Systems</h3>
+          <p>Ground and air surveillance radars for perimeter, border and critical asset protection.</p>
+        </a>
+
+        <a class="category-card" href="products/weapons.html">
+          <span class="pill">Kinetic Effectors</span>
+          <h3>Weapons</h3>
+          <p>Small arms, remote weapon stations and integrated weapon modules for UAV & ground use.</p>
+        </a>
+
+        <a class="category-card" href="products/ammunition.html">
+          <span class="pill">Ammunition</span>
+          <h3>Ammunition</h3>
+          <p>Small-, medium- and special-purpose ammunition for operational forces.</p>
+        </a>
+
+        <a class="category-card" href="products/armour.html">
+          <span class="pill">Protection</span>
+          <h3>Armour</h3>
+          <p>Ballistic vests, plates and helmets engineered for frontline survivability.</p>
+        </a>
+
+        <a class="category-card" href="products/vehicles.html">
+          <span class="pill">Platforms</span>
+          <h3>Vehicles</h3>
+          <p>Fast patrol boats and mission-configurable platforms for naval and riverine operations.</p>
+        </a>
+
+        <a class="category-card" href="products/tactical-gear.html">
+          <span class="pill">Load Bearing</span>
+          <h3>Tactical Gear</h3>
+          <p>Combat uniforms, boots and load-bearing equipment for demanding deployments.</p>
+        </a>
+
+        <a class="category-card" href="products/eod-systems.html">
+          <span class="pill">EOD / C-IED</span>
+          <h3>EOD Systems</h3>
+          <p>Bomb-disposal tools, robots and accessories for safe stand-off neutralisation.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (aynı) -->
+  <footer class="footer">
+    <div class="content">
+      <div>
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>PTS Defense</div>
+        </div>
+        <p class="tagline">Estonia based international defence supplier.</p>
+      </div>
+
+      <div>
+        <strong>Company</strong>
+        <ul class="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <strong>Products</strong>
+        <ul class="list">
+          <li><a href="products/ew-systems.html">EW Systems</a></li>
+          <li><a href="products/radar-systems.html">Radar Systems</a></li>
+          <li><a href="products/weapons.html">Weapons & Ammunition</a></li>
+          <li><a href="products/armour.html">Armour</a></li>
+          <li><a href="products/vehicles.html">Vehicles</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MENU JS -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuClose = document.getElementById('menuClose');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+      sideMenu.classList.add('open');
+      menuOverlay.classList.add('show');
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove('open');
+      menuOverlay.classList.remove('show');
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>
