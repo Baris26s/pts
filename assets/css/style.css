@@ -616,3 +616,37 @@ h1, h2, h3, h4 {
   opacity: 1;
   visibility: visible;
 }
+.side-menu ul li a {
+    display: block;
+    padding: 14px 14px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 14px;
+    transition: 0.25s ease;
+}
+
+/* hover efekti */
+.side-menu ul li a:hover {
+    padding-left: 20px;
+    border-color: rgba(124,242,196,0.4);
+    background: rgba(124,242,196,0.10);
+    color: var(--accent);
+    box-shadow: 0 0 16px rgba(124,242,196,0.25);
+}
+.side-menu {
+  transform: translateX(0);
+}
+
+.side-menu.open {
+  animation: slideIn 0.35s ease forwards;
+}
+
+@keyframes slideIn {
+  from { right: -360px; }
+  to   { right: 0; }
+}
+
+}
