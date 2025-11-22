@@ -522,4 +522,18 @@ h1, h2, h3, h4 {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.side-menu ul {
+    display: block !important;
+}
+
+.side-menu ul li {
+    margin-bottom: 18px;
+    display: block;
+}
+
+.side-menu ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+}
 
