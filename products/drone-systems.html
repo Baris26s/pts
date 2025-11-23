@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Systems | PTS Defense</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body data-page="drone-systems">
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>PTS Defense</div>
+          <small class="tagline">Estonia based • NATO NSPA vendor</small>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a class="active" href="../products.html">Products</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" id="menuToggle">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+    <div class="close-btn" id="menuClose">✕</div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../products.html">Products</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </aside>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">UAV • VTOL • ISR • Loitering</span>
+        <h1>Advanced Military Drone Systems</h1>
+        <p>
+          Complete line of ISR drones, VTOL tactical UAV platforms, loitering munitions,
+          long-endurance surveillance drones and multi-mission anti-drone payloads
+          engineered for NATO-aligned defence operations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="section">
+    <div class="content">
+      <h2>Drone Systems Portfolio</h2>
+      <p class="subheading">All UAV & anti-drone platforms from PTS Defense.</p>
+
+      <div class="cards">
+
+        <!-- ISR DRONES -->
+        <div class="card">
+          <h3>PTS ISR-30 Tactical Drone</h3>
+          <p>Short-range ISR UAV with EO/IR gimbals and encrypted datalink.</p>
+          <span class="pill">ISR Drone</span>
+        </div>
+
+        <div class="card">
+          <h3>PTS ISR-120 Long Endurance</h3>
+          <p>Fixed-wing long endurance surveillance drone with autonomous operation.</p>
+          <span class="pill">Long Endurance</span>
+        </div>
+
+        <!-- VTOL -->
+        <div class="card">
+          <h3>PTS VTOL-X4</h3>
+          <p>Vertical take-off UAV with high-payload capacity and EO/IR mission pack.</p>
+          <span class="pill">VTOL</span>
+        </div>
+
+        <div class="card">
+          <h3>PTS VTOL-X8 Heavy Lift</h3>
+          <p>Heavy-duty VTOL drone with extended range and multi-sensor bay.</p>
+          <span class="pill">VTOL Heavy</span>
+        </div>
+
+        <!-- LOITERING (KAMIKAZE) DRONES -->
+        <div class="card">
+          <h3>PTS LM-20 Loitering Munition</h3>
+          <p>Precision tactical loitering munition with autonomous strike capability.</p>
+          <span class="pill">Loitering</span>
+        </div>
+
+        <div class="card">
+          <h3>PTS LM-45 Long Range</h3>
+          <p>High-range kamikaze drone for deep-strike anti-armor missions.</p>
+          <span class="pill">Kamikaze</span>
+        </div>
+
+        <!-- ANTI DRONE -->
+        <div class="card">
+          <h3>PTS AD-900 Anti-Drone Platform</h3>
+          <p>RF jamming, GNSS denial & EO tracking for drone interception.</p>
+          <span class="pill">Anti-Drone</span>
+        </div>
+
+        <div class="card">
+          <h3>PTS AD-360 Portable Jammer</h3>
+          <p>Man-portable anti-drone jammer for field operations.</p>
+          <span class="pill">Portable EW</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="content">
+      <div>
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>PTS Defense</div>
+        </div>
+        <p class="tagline">Estonia based international defence supplier.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuClose = document.getElementById("menuClose");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function openMenu() {
+      sideMenu.classList.add("open");
+      menuOverlay.classList.add("show");
+    }
+    function closeMenu() {
+      sideMenu.classList.remove("open");
+      menuOverlay.classList.remove("show");
+    }
+    menuToggle.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+  </script>
+
+</body>
+</html>
