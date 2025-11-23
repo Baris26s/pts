@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assault Rifle M05 E1 – Holographic Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Orbitron", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #07111f 0, #02040a 45%, #000000 100%);
+      color: #e6f7ff;
+    }
+
+    .holo-wrapper {
+      perspective: 1600px;
+    }
+
+    .holo-card {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      padding: 24px 22px;
+      border-radius: 32px;
+      background: rgba(2, 12, 26, 0.6);
+      border: 1px solid rgba(0, 215, 255, 0.8);
+      box-shadow:
+        0 0 18px rgba(0, 215, 255, 0.7),
+        0 0 80px rgba(0, 215, 255, 0.3);
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      transform-style: preserve-3d;
+      animation: floatCard 9s ease-in-out infinite;
+    }
+
+    .holo-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(0, 225, 255, 0.3) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(0, 130, 255, 0.22) 0, transparent 55%);
+      opacity: 0.35;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .holo-header {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(0, 215, 255, 0.35);
+      padding-bottom: 10px;
+    }
+
+    .holo-title {
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .holo-sub {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 6px;
+      color: #7fe7ff;
+    }
+
+    .grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-rows: 220px auto;
+      row-gap: 14px;
+    }
+
+    /* Rifle panel */
+    .rifle-panel {
+      position: relative;
+      border-radius: 18px;
+      border: 1px solid rgba(0, 215, 255, 0.45);
+      background: linear-gradient(
+          135deg,
+          rgba(0, 215, 255, 0.12),
+          rgba(0, 135, 255, 0.03)
+        );
+      overflow: hidden;
+    }
+
+    .rifle-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(0, 215, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 215, 255, 0.12) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.35;
+    }
+
+    .rifle-img {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      max-width: 82%;
+      filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.9));
+      transform-origin: 50% 50%;
+      transform-style: preserve-3d;
+      animation: spinRifle 12s linear infinite;
+    }
+
+    /* Info panels */
+    .info {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 10px;
+      font-size: 11px;
+    }
+
+    .panel {
+      border-radius: 14px;
+      border: 1px solid rgba(0, 215, 255, 0.38);
+      padding: 10px 11px;
+      background: radial-gradient(circle at top left,
+      rgba(0, 215, 255, 0.14) 0, transparent 60%);
+    }
+
+    .panel-title {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: #aaf5ff;
+    }
+
+    ul {
+      list-style: none;
+      line-height: 1.35;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #35e4ff;
+      margin-right: 6px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+      font-size: 10px;
+    }
+
+    .data-table td {
+      padding: 2px 0;
+      border-bottom: 1px solid rgba(0, 215, 255, 0.16);
+    }
+
+    .data-label {
+      color: #8fdfff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 9px;
+    }
+
+    .footer {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 10px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #5ddcff;
+      opacity: 0.9;
+    }
+
+    /* Hover effect (optional) */
+    .holo-card:hover {
+      animation-play-state: paused;
+      box-shadow:
+        0 0 26px rgba(0, 255, 255, 0.95),
+        0 0 120px rgba(0, 180, 255, 0.6);
+    }
+
+    .holo-card:hover .rifle-img {
+      animation-duration: 7s;
+    }
+
+    /* Animations */
+    @keyframes spinRifle {
+      0% {
+        transform: rotateY(0deg) translateZ(0);
+      }
+      50% {
+        transform: rotateY(180deg) translateZ(18px);
+      }
+      100% {
+        transform: rotateY(360deg) translateZ(0);
+      }
+    }
+
+    @keyframes floatCard {
+      0%, 100% {
+        transform: rotateX(10deg) rotateY(-8deg) translateY(0);
+      }
+      50% {
+        transform: rotateX(6deg) rotateY(8deg) translateY(-8px);
+      }
+    }
+
+    /* small screen tweak */
+    @media (max-width: 520px) {
+      .holo-card {
+        transform: scale(0.9);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="holo-wrapper">
+    <div class="holo-card">
+      <header class="holo-header">
+        <div class="holo-title">ASSAULT RIFLE M05 E1</div>
+        <div class="holo-sub">PTS DEFENSE // NATO STYLE HUD</div>
+      </header>
+
+      <div class="grid">
+        <!-- RIFLE PANEL -->
+        <div class="rifle-panel">
+          <div class="rifle-grid"></div>
+
+          <!-- Buraya kendi silah resmini koy -->
+          <img
+            class="rifle-img"
+            src="assault-m05e1.png"
+            alt="Assault Rifle M05 E1"
+          />
+        </div>
+
+        <!-- INFO PANELS -->
+        <div class="info">
+          <div class="panel">
+            <div class="panel-title">Key Features</div>
+            <ul>
+              <li>Basic model, no receiver optic mount</li>
+              <li>Kalashnikov system – reliable in all climates</li>
+              <li>Hammer forged barrel – high precision</li>
+              <li>Mechanical + applied safety</li>
+              <li>Fire modes: automatic / semi automatic</li>
+              <li>30 round metal or polymer magazine</li>
+              <li>Very low recoil, easy control</li>
+              <li>Tritium iron sights for night use</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Technical Data</div>
+            <table class="data-table">
+              <tr>
+                <td class="data-label">Caliber</td>
+                <td>7.62 x 39 mm</td>
+              </tr>
+              <tr>
+                <td class="data-label">Twist rate</td>
+                <td>240 mm / 4 grooves</td>
+              </tr>
+              <tr>
+                <td class="data-label">Barrel length</td>
+                <td>415 mm</td>
+              </tr>
+              <tr>
+                <td class="data-label">Length</td>
+                <td>934 / 689 mm (folded)</td>
+              </tr>
+              <tr>
+                <td class="data-label">Weapon weight</td>
+                <td>4.05 kg</td>
+              </tr>
+              <tr>
+                <td class="data-label">Mag weight</td>
+                <td>0.37 kg (empty)</td>
+              </tr>
+              <tr>
+                <td class="data-label">Rate of fire</td>
+                <td>620 ± 60 rds / min</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>PRIME TECHNOLOGY SECURITY OU</span>
+        <span>M05 E1 // LIVE DATA</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
